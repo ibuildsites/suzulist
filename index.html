@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Enable standalone mode -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- Status bar style -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#2b9993">
+
+  <!-- App title on home screen -->
+  <meta name="apple-mobile-web-app-title" content="SuzuList">
+
+  <!-- App icons -->
+  <link rel="apple-touch-icon" href="/suzulist152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/suzulist180.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="/suzulist.png" sizes="500x500">
+
+  <!-- iOS Splash Screen -->
+  <link rel="apple-touch-startup-image" href="/splash.png" media="(prefers-color-scheme: light)">
+  <link rel="apple-touch-startup-image" href="/splash.png" media="(prefers-color-scheme: dark)">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuzuList</title>
+
+  <!-- Loading Screen Styles -->
+  <style>
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: #2b9993;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #loading-screen img {
+      width: 120px;
+      height: 120px;
+    }
+  </style>
+
+  <!-- Loading Screen Script -->
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loading-screen");
+      if (loader) {
+        loader.classList.add("fade-out");
+        setTimeout(() => loader.remove(), 700);
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="loading-screen">
+    <img src="/suzulist152.png" alt="Loading">
+  </div>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
